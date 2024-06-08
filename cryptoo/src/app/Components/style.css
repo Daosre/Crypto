@@ -37,9 +37,14 @@
 
 .styleLogo {
     filter: drop-shadow(0 1px 10px orange);
+    z-index: auto;
 }
 
 .containerSignUp {
     box-shadow: 0 1px 20px rgba(255, 255, 255, 0.354);
     background-color: rgba(47, 46, 46, 0.266);
+}
+
+.header {
+    z-index: auto;
 }
