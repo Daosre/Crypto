@@ -19,14 +19,14 @@ const RegisterUsers = () => {
   ;
   }).catch((e) => console.log(e))
   return (
-    <div>
+    <div className=''>
         <div className="flex justify-center items-center h-screen bg-black">
-        <div className="w-1/2 h-full bg-black flex flex-col md:flex-row">
+        <div className="w-full h-full bg-black flex flex-col md:flex-row">
           <div className='w-80 items-center flex flex-col justify-center mx-auto'>
             <Logo />
             <h1 className="text-2xl font-semibold mb-4 text-black text-center styleLogIn">SignUp</h1>
           </div>
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center w-80 justify-center text-right mx-auto'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center w-80 justify-center text-center mx-auto md:text-right'>
            <div className="mb-4">
                 <label className="block text-gray-600 styleLogIn">First Name</label>
               <input type="text" id="username" className="w-80 border-2 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black border-orange-600 bg-orange-200 text-right"

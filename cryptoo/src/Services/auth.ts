@@ -1,6 +1,7 @@
 import { LoginProps, RegisterProps } from "@/Utils/types"
 import axios from "axios"
 
+//Login
 export async function LogInUsers(authProps: LoginProps) {
     let url = `${process.env.NEXT_PUBLIC_API_URL}auth/signin`
   
@@ -27,6 +28,8 @@ export async function LogInUsers(authProps: LoginProps) {
         throw new Error(e)
       })
 }
+
+//Register
 export async function registerUser(authProps: RegisterProps) {
     let url = `${process.env.NEXT_PUBLIC_API_URL}auth/signup`
   

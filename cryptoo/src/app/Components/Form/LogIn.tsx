@@ -18,12 +18,12 @@ const LogInUser = () => {
         push('/signup');
     }).catch((e) => console.log(e))
   return (
-    <div>
+    <div className=''>
         <div className="flex justify-center items-center h-screen bg-black">
             <div className="w-1/2 h-screen hidden lg:block">
                   <img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3J5cHRvfGVufDB8fDB8fHww" alt="" className="object-cover w-full h-full styleImage" />
         </div>
-              <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2 bg-black">
+              <div className="sm:20 p-8 w-full h-full lg:w-1/2 bg-black flex flex-col items-center">
                   <Logo />
             <h1 className="text-2xl font-semibold mb-4 text-black text-center styleLogIn">Login</h1>
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center'>
