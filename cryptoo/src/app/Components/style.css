@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Libre+Barcode+128+Text&family=Nabla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Libre+Barcode+128+Text&family=Nabla&family=Teko:wght@300..700&display=swap');
+
+
+
+.styleLogIn {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.InputLogin {
+    font-family: "Nabla", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "EDPT" 100,
+    "EHLT" 12;
+}
+.styleInput {
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    color: black;
+}
+
+.SignUp {
+    font-family: "Teko", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.styleLogo {
+    filter: drop-shadow(0 1px 10px orange);
+}
+
+.containerSignUp {
+    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.354);
+    background-color: rgba(47, 46, 46, 0.266);
+}
