@@ -8,6 +8,7 @@ import '../../Components/style.css'
 import Link from 'next/link'
 import { LogInUsers } from '@/Services/auth'
 import { useRouter } from 'next/navigation'
+import { Flip, toast } from 'react-toastify'
 
 
 const LogInUser = () => {
@@ -15,8 +16,13 @@ const LogInUser = () => {
     const { register, handleSubmit, watch, formState: { errors }, } = useForm<LoginProps>()
     const onSubmit: SubmitHandler<LoginProps> = (data) => LogInUsers(data).then((res) => {
         window.localStorage.setItem('toktok', res.data.access_token)
+        toast.success('Login Sucessfull ✅')
         push('/signup');
-    }).catch((e) => console.log(e))
+    })
+        .catch((e) => toast.error(e.response.data.message,
+            {
+                position: "top-right"
+        }))
   return (
     <div className=''>
         <div className="flex justify-center items-center h-screen bg-black">
@@ -26,7 +32,7 @@ const LogInUser = () => {
               <div className="sm:20 p-8 w-full h-full lg:w-1/2 bg-black flex flex-col items-center">
                   <Logo />
             <h1 className="text-2xl font-semibold mb-4 text-black text-center styleLogIn">Login</h1>
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center '>
            <div className="mb-4">
                 <label className="block text-gray-600 styleLogIn">Email</label>
                           <input type="email" id="username" className="w-80 border-2 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black border-orange-600 bg-orange-200  styleInput"

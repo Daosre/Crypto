@@ -8,16 +8,17 @@ import '../../Components/style.css'
 import Link from 'next/link'
 import { registerUser } from '@/Services/auth'
 import { useRouter } from 'next/navigation'
+import { toast } from 'react-toastify'
 
 
 const RegisterUsers = () => {
   const { push } = useRouter()
   const { register, handleSubmit, watch, formState: { errors }, } = useForm<RegisterProps>()
   const onSubmit: SubmitHandler<RegisterProps> = (data) => registerUser(data).then((res) => {
-    console.log(res)
+    toast.success('Register Successfully')
       push('/login')
   ;
-  }).catch((e) => console.log(e))
+  }).catch((e) => toast(' 🔴 Do it better 🖕 ', ))
   return (
     <div className=''>
         <div className="flex justify-center items-center h-screen bg-black">
@@ -26,7 +27,7 @@ const RegisterUsers = () => {
             <Logo />
             <h1 className="text-2xl font-semibold mb-4 text-black text-center styleLogIn">SignUp</h1>
           </div>
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center w-80 justify-center text-center mx-auto md:text-right'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center justify-center text-center mx-auto md:text-right'>
            <div className="mb-4">
                 <label className="block text-gray-600 styleLogIn">First Name</label>
               <input type="text" id="username" className="w-80 border-2 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black border-orange-600 bg-orange-200 text-right"

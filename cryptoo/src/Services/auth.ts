@@ -24,9 +24,6 @@ export async function LogInUsers(authProps: LoginProps) {
       .then((res) => {
         return res
       })
-      .catch((e) => {
-        throw new Error(e)
-      })
 }
 
 //Register

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "react-hot-toast";
+import { Flip, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +19,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-          <Toaster
-              position="top-center"
-              reverseOrder={false}/>
+        {
+          //Toastify
+        }
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition= { Flip }
+        />
         {children}</body>
     </html>
   );
