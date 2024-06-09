@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Nabla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Libre+Barcode+128+Text&family=Nabla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Libre+Barcode+128+Text&family=Nabla&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 
 
@@ -44,7 +45,6 @@
     box-shadow: 0 1px 20px rgba(255, 255, 255, 0.354);
     background-color: rgba(47, 46, 46, 0.266);
 }
-
 .header {
     z-index: auto;
     filter: drop-shadow(0 1px 10px black);
@@ -53,4 +53,19 @@
 .styleHeader {
     box-shadow: 0 1px 50px rgba(255, 166, 0, 0.536);
     background-color: rgba(255, 255, 255, 0.758);
+}
+
+.styleInsideFooter {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    filter: drop-shadow(0 1px 10px rgba(255, 255, 255, 0.723));
+}
+
+.styleFooter {
+    box-shadow: 0 1px 30px rgba(255, 166, 0, 0.649);
+}
+.CompagnyLogo:hover {
+    filter: drop-shadow(0 1px 5px rgb(255, 119, 0));
+    border-color: orange;
 }
