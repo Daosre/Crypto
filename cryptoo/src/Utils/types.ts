@@ -57,16 +57,16 @@ export type TradeData = {
    // AssetData \\
 // --------------- \\
 export type MyAssetData = {
-    id: string,
+    id?: string,
     firstName: string
     lastName: string
     dollarAvailables: number
     pseudo: string
-    UserHasCryptoData: AllUserAssetData
+    UserHasCryptoData: AllUserAssetData[]
 }
 export type AllUserAssetData = {
     Crypto:  {
-        id: string,
+        id?: string,
         name: string
         value: number
         image: string

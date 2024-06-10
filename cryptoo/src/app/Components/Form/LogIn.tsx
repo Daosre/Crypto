@@ -37,13 +37,13 @@ const LogInUser = () => {
                 <label className="block text-gray-600 styleLogIn">Email</label>
                           <input type="email" id="username" className="w-80 border-2 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black border-orange-600 bg-orange-200  styleInput"
                               {...register('email' , {required: true})} />
-                          {errors.email && <ErrorMsg error={'Missing Field'} />}    
+                          {errors.email && <ErrorMsg error={'email'} />}    
             </div>
            <div className="mb-4">
                 <label className="block text-gray-600 styleLogIn">Password</label>
                           <input type="password" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 "
                              {...register('password' , {required: true})} />
-                             {errors.password && <ErrorMsg error={'Missing Field'} />}
+                             {errors.password && <ErrorMsg error={'password'} />}
             </div>
                 <button type="submit" className="bg-orange-500 hover:bg-orange-700 duration-1000 text-white font-semibold rounded-md py-2 px-4 w-80 mt-3 InputLogin">Login</button>
         </form>
