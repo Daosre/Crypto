@@ -10,7 +10,6 @@ import { registerUser } from '@/Services/auth'
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify'
 import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
 import { schema } from '@/app/Validation/validateurForm'
 
 
@@ -54,12 +53,12 @@ const RegisterUsers = () => {
               //Librairie de hook enfin qui ce complete a hook
             }
             <div className="mt-4">
-                        <label className="block font-semibold" htmlFor="age">Age</label>
-                        <input
-                            {...register("age")}
-                            className="shadow-inner bg-gray-100 rounded-lg placeholder-black text-2xl p-2 border-none block mt-1 w-full"
-                            id="age"
-                            type="number"
+               <label className="block font-semibold" htmlFor="age">Age</label>
+                  <input
+                      {...register("age")}
+                        className="shadow-inner bg-gray-100 rounded-lg placeholder-black text-2xl p-2 border-none block mt-1 w-full"
+                        id="age"
+                        type="number"
                         />
                         {errors?.age && <p className='text-red-500'>{errors.age.message}</p>}
             </div>

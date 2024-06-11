@@ -19,10 +19,7 @@ const LogInUser = () => {
         toast.success('Login Sucessfull ✅')
         push('/signup');
     })
-        .catch((e) => toast.error(e.response.data.message,
-            {
-                position: "top-right"
-        }))
+        .catch((e) => {})
   return (
     <div className=''>
         <div className="flex justify-center items-center h-screen bg-black">

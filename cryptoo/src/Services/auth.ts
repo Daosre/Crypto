@@ -1,5 +1,6 @@
 import { LoginProps, RegisterProps } from "@/Utils/types"
 import axios from "axios"
+import { toast } from "react-toastify"
 
 //Login
 export async function LogInUsers(authProps: LoginProps) {
@@ -24,6 +25,13 @@ export async function LogInUsers(authProps: LoginProps) {
       .then((res) => {
         return res
       })
+      .catch((e) => {
+        toast.error(e.response.data.message,
+          {
+              position: "top-right"
+          })
+        return e
+  })
 }
 
 //Register
@@ -32,7 +40,7 @@ export async function registerUser(authProps: RegisterProps) {
   
     let axiosConfig = {
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json;charset=utf-8',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
       },
@@ -47,6 +55,7 @@ export async function registerUser(authProps: RegisterProps) {
             city: authProps.city,
             email: authProps.email,
             password: authProps.password,
+            age: authProps.age || 20,
             promoCode: authProps.promoCode
         },
         axiosConfig
@@ -55,6 +64,9 @@ export async function registerUser(authProps: RegisterProps) {
         return res
       })
       .catch((e) => {
-        throw new Error(e)
+        toast.error(e.response.data.message,
+          {
+              position: "top-right"
+          })
       })
   }

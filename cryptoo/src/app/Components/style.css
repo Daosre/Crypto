@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Libre+Barcode+128+Text&family=Nabla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Libre+Barcode+128+Text&family=Nabla&family=Teko:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Oooh+Baby&display=swap');
+
+
 
 
 
@@ -68,4 +72,11 @@
 .CompagnyLogo:hover {
     filter: drop-shadow(0 1px 5px rgb(255, 119, 0));
     border-color: orange;
+}
+
+.UserBox {
+    box-shadow: 0 1px 30px orange;
+    font-family: "Oooh Baby", cursive;
+    font-weight: 400;
+    font-style: normal;
 }

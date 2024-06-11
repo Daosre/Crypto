@@ -62,8 +62,9 @@ export type MyAssetData = {
     firstName: string
     lastName: string
     dollarAvailables: number
-    pseudo: string
-    UserHasCrypto: AllUserAssetData[]
+    pseudo: string  
+    age: string
+    UserHasCrypto?: AllUserAssetData[]
 }
 export type AllUserAssetData = {
         id?: string,

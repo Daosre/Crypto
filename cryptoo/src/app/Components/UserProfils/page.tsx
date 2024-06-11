@@ -1,5 +1,38 @@
+// 'use client'
+// import { UsersAsset } from '@/Services/user'
+// import { MyAssetData } from '@/Utils/types'
+// import React, { useEffect, useState } from 'react'
+
+// const UserPP = () => {
+//     const [myAsset, setMyasset] = useState<MyAssetData[]>([])
+//     const [isReloadNeeded, setIsReloadNeeded] = useState(false)
+//     console.log(myAsset);
+
+//     useEffect(() => {
+//         setIsReloadNeeded(true)
+//         UsersAsset().then((res) => {
+//           setMyasset(res.data)
+//         })
+//     }, [isReloadNeeded])
+    
+//     return (
+//         <div className='flex flex-wrap border-2 rounded-lg w-1/3 justify-center p-4 m-8 UserBox'>
+
+//                 <div className='p-2 m-8 w-48 bg-white border-2 border-orange-700 text-black rounded-lg UserBox'>
+//                   <p className='tracking-wide'>First Name : {}</p>
+//                    {/* <p className='tracking-wide'>Last Name : {myAsset.lastName}</p>
+//                   <p className='tracking-wide'>Pseudo : {myAsset.pseudo}</p>
+//                   <p>Age: {myAsset.age}</p>
+//                   <p className='tracking-wide'>Dollards Account : {myAsset.dollarAvailables}</p> */}
+//              </div>
+//     </div >
+//     )
+// }
+
+// export default UserPP
+
 'use client'
-import { AllUsersAsset } from '@/Services/user'
+import { AllUsersAsset, UsersAsset } from '@/Services/user'
 import { AllUserAssetData, MyAssetData } from '@/Utils/types'
 import React, { useEffect, useState } from 'react'
 import '../../Components/style.css'
@@ -20,7 +53,7 @@ const UserData = ({ Userprops }: ModalUser) => {
   
   useEffect(() => {
     setIsReloadNeeded(true)
-    AllUsersAsset().then((res) => {
+    UsersAsset().then((res) => {
       setuserList(res.data)
     })
   }, [isReloadNeeded])
@@ -35,8 +68,6 @@ const UserData = ({ Userprops }: ModalUser) => {
       <div className='flex flex-wrap border-2 rounded-lg w-1/3 justify-center p-4 m-8 UserBox'>
       {userList &&
         userList.map((user: MyAssetData) => {
-          console.log(userList);
-
             return (
               <div className='p-2 m-8 w-48 bg-white border-2 border-orange-700 text-black rounded-lg UserBox' key={user.id}>
                 <p className='tracking-wide'>First Name : {user.firstName}</p>
@@ -44,23 +75,6 @@ const UserData = ({ Userprops }: ModalUser) => {
                 <p className='tracking-wide'>Pseudo : {user.pseudo}</p>
                 <p>Age: {user.age}</p>
                 <p className='tracking-wide'>Dollards Account : {user.dollarAvailables}</p>
-                {/* {assetData &&
-        assetData.map((Asset: MyAssetData) => {
-          return(
-          Asset.UserHasCrypto &&
-            Asset.UserHasCrypto.map(({ Crypto }: { Crypto: AllUserAssetData }) => {
-              return (
-                <div className='border-2 border-orange-600 flex gap-10' key={Crypto.id}>
-                  <p>Name Crypto : {Crypto.name}</p>
-                  <p>Quantity : {Crypto.quantity}</p>
-                  <p>Value : {Crypto.value}$</p>
-                  <p>{Crypto.created_at}.</p>
-                  <img src={Crypto.image} className='w-10'/>
-            </div>
-              )
-            })
-        )})
-  } */}
               </div>
           )
           })}
