@@ -9,11 +9,14 @@ import Link from 'next/link'
 import { registerUser } from '@/Services/auth'
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify'
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+import { schema } from '@/app/Validation/validateurForm'
 
 
 const RegisterUsers = () => {
   const { push } = useRouter()
-  const { register, handleSubmit, watch, formState: { errors }, } = useForm<RegisterProps>()
+  const { register, handleSubmit, watch, formState: { errors }, } = useForm<RegisterProps>({mode:"all", resolver:yupResolver(schema),defaultValues:{firstName:'Remy'}})
   const onSubmit: SubmitHandler<RegisterProps> = (data) => registerUser(data).then((res) => {
     toast.success('Register Successfully')
       push('/login')
@@ -46,6 +49,22 @@ const RegisterUsers = () => {
               {...register('pseudo' , {required: true})} />
               {errors.pseudo && <ErrorMsg error={'pseudo'} />}
             </div>
+
+            {
+              //Librairie de hook enfin qui ce complete a hook
+            }
+            <div className="mt-4">
+                        <label className="block font-semibold" htmlFor="age">Age</label>
+                        <input
+                            {...register("age")}
+                            className="shadow-inner bg-gray-100 rounded-lg placeholder-black text-2xl p-2 border-none block mt-1 w-full"
+                            id="age"
+                            type="number"
+                        />
+                        {errors?.age && <p className='text-red-500'>{errors.age.message}</p>}
+            </div>
+            
+
             <div className="mb-4">
                 <label className="block text-gray-600 styleLogIn">City</label>
                           <input type="text" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"
@@ -58,12 +77,16 @@ const RegisterUsers = () => {
               {...register('email' , {required: true})} />
               {errors.email && <ErrorMsg error={'email'} />}
             </div>
+
+            
             <div className="mb-4">
                 <label className="block text-gray-600 styleLogIn">Password</label>
               <input type="password" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"
               {...register('password' , {required: true})} />
               {errors.password && <ErrorMsg error={'password'} />}
             </div>
+
+
             <div className="mb-4">
                 <label className="block text-gray-600 styleLogIn">PromoCode</label>
               <input type="text" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"

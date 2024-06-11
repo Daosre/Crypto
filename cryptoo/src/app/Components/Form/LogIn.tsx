@@ -8,7 +8,7 @@ import '../../Components/style.css'
 import Link from 'next/link'
 import { LogInUsers } from '@/Services/auth'
 import { useRouter } from 'next/navigation'
-import { Flip, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 
 
 const LogInUser = () => {

@@ -12,7 +12,8 @@ export type RegisterProps = {
     city: string
     email: string
     password: string
-    promoCode: string
+    promoCode?: string
+    age: number
 }
 
 // --------------- \\
@@ -62,10 +63,9 @@ export type MyAssetData = {
     lastName: string
     dollarAvailables: number
     pseudo: string
-    UserHasCryptoData: AllUserAssetData[]
+    UserHasCrypto: AllUserAssetData[]
 }
 export type AllUserAssetData = {
-    Crypto:  {
         id?: string,
         name: string
         value: number
@@ -73,5 +73,4 @@ export type AllUserAssetData = {
         quantity: number
         created_at: string
         updated_at: string
-    }
 }
