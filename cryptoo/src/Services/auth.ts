@@ -55,7 +55,7 @@ export async function registerUser(authProps: RegisterProps) {
             city: authProps.city,
             email: authProps.email,
             password: authProps.password,
-            age: authProps.age || 20,
+            age:20,
             promoCode: authProps.promoCode
         },
         axiosConfig

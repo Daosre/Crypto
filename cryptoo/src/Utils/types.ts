@@ -67,6 +67,7 @@ export type MyAssetData = {
     UserHasCrypto?: AllUserAssetData[]
 }
 export type AllUserAssetData = {
+    Crypto: {
         id?: string,
         name: string
         value: number
@@ -74,4 +75,8 @@ export type AllUserAssetData = {
         quantity: number
         created_at: string
         updated_at: string
+    }
+        amount: number
+
 }
+        

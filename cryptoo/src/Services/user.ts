@@ -24,7 +24,6 @@ export async function UsersAsset() {
         throw new Error(e)
       })
 }
-
 // All Users Asset
 export async function AllUsersAsset() {
     let url = `${process.env.NEXT_PUBLIC_API_URL}user/users-assets`

@@ -3,10 +3,7 @@ import { AllUsersAsset } from '@/Services/user'
 import { AllUserAssetData, MyAssetData } from '@/Utils/types'
 import React, { useEffect, useState } from 'react'
 import '../../Components/style.css'
-
-
-
-
+import Amount from '../Amount/page'
 
 type ModalUser = {
   Userprops: MyAssetData
@@ -14,6 +11,7 @@ type ModalUser = {
 const UserData = ({ Userprops }: ModalUser) => {
   
   const [userList, setuserList] = useState<MyAssetData[]>()
+
   const [isReloadNeeded, setIsReloadNeeded] = useState(false)
   const [assetData, setassetData] = useState<AllUserAssetData[]>()
 
@@ -31,20 +29,37 @@ const UserData = ({ Userprops }: ModalUser) => {
     })
   }, [isReloadNeeded])
 
+
   return (
-      <div className='flex flex-wrap border-2 rounded-lg w-1/3 justify-center p-4 m-8 UserBox'>
+    <div className='flex flex-wrap border-2 rounded-lg w-full justify-center p-4 m-8 UserBox'>
       {userList &&
         userList.map((user: MyAssetData) => {
-          console.log(userList);
+          return (
+            <div className='p-2 m-8 w-48 bg-white border-2 border-orange-700 text-black rounded-lg UserBox' key={user.id}>
+              <p className='tracking-wide'>First Name : {user.firstName}</p>
+              <p className='tracking-wide'>Last Name : {user.lastName}</p>
+              <p className='tracking-wide'>Pseudo : {user.pseudo}</p>
+              <p>Age: {user.age}</p>
+              <p className='tracking-wide'>Dollards Account : {user.dollarAvailables}</p>
+              <Amount/>
+            </div>
+            )
+      }
+        )
+      }
+    </div>
+  )
+}
 
-            return (
-              <div className='p-2 m-8 w-48 bg-white border-2 border-orange-700 text-black rounded-lg UserBox' key={user.id}>
-                <p className='tracking-wide'>First Name : {user.firstName}</p>
-                 <p className='tracking-wide'>Last Name : {user.lastName}</p>
-                <p className='tracking-wide'>Pseudo : {user.pseudo}</p>
-                <p>Age: {user.age}</p>
-                <p className='tracking-wide'>Dollards Account : {user.dollarAvailables}</p>
-                {/* {assetData &&
+ 
+            
+
+export default UserData
+
+
+
+
+ {/* {assetData &&
         assetData.map((Asset: MyAssetData) => {
           return(
           Asset.UserHasCrypto &&
@@ -61,14 +76,3 @@ const UserData = ({ Userprops }: ModalUser) => {
             })
         )})
   } */}
-              </div>
-          )
-          })}
-      
-  </div >
-  )
-}
- 
-            
-
-export default UserData

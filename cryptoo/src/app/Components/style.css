@@ -75,7 +75,7 @@
 }
 
 .UserBox {
-    box-shadow: 0 1px 30px orange;
+    box-shadow: 0 1px 20px rgba(255, 166, 0, 0.732);
     font-family: "Oooh Baby", cursive;
     font-weight: 400;
     font-style: normal;
