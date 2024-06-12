@@ -46,6 +46,9 @@
     filter: drop-shadow(0 1px 10px orange);
     z-index: auto;
 }
+.styleLogoH {
+    filter: drop-shadow(0 1px 10px white);
+}
 
 .containerSignUp {
     box-shadow: 0 1px 20px rgba(255, 255, 255, 0.354);
@@ -102,4 +105,12 @@
     font-size: 30px;
     border-radius: 20px;
     box-shadow: 0 1px 20px rgba(255, 255, 255, 0.742);
+}
+
+.sorry:hover {
+    font-size: 0;
+}
+.sorry:hover::after {
+   content:attr(data-hover);
+   font-size: 20px;
 }

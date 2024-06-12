@@ -36,7 +36,7 @@ const UserData = ({ Userprops }: ModalUser) => {
           return (
             <div className='p-4 m-8 w-48 text-white rounded-lg UserBox' key={user.id}>
               <p className='tracking-wide'>Pseudo : {user.pseudo}</p>
-              <p className='tracking-wide'>Dollards Account : {user.dollarAvailables}</p>
+              <p className='tracking-wide'>Dollards Account : {user.dollarAvailables.toFixed(2)}</p>
               {/* <Amount/> */}
             </div>
             )
