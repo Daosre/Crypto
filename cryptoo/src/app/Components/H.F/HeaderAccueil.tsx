@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../Components/style.css'
-import LogoH from '../LogoH'
+import LogoH from '../Logo/LogoH'
 
 const HeaderAccueil = () => {
   return (

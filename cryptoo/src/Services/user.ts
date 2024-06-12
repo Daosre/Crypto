@@ -18,7 +18,7 @@ export async function UsersAsset() {
         axiosConfig
       )
       .then((res) => {
-        return res
+        return res.data
       })
       .catch((e) => {
         throw new Error(e)

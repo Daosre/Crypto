@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from '../Logo'
+import Logo from '../Logo/Logo'
 import LogOut from '../Button/LogOut'
 import MyAsset from '../Button/MyAsset'
 import '../../Components/style.css'
@@ -8,7 +8,7 @@ import BankTrader from '../Button/BankTrader'
 
 const Header = () => {
   return (
-    <div className='relative h-60 styleHeader'>
+    <div className='relative h-60 styleHeader relative'>
       <div className='gap-5 p-2 w-full relative top-3 justify-between flex md:top-10 duration-500'>
         <div className='flex flex-col gap-5 relative left-10'>
           <Usertrade />

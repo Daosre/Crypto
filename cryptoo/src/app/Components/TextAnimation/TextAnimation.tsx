@@ -13,6 +13,8 @@ const AnimationText = () => {
     2000,
     'We love us',
     2000,
+    'Wtf Bro',
+    2000,
   ]}
   speed={50}
   style={{ fontSize: '2em', color: '#f48c06'}}

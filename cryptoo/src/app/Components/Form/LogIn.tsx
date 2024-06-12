@@ -3,7 +3,7 @@ import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { ErrorMsg } from '../Error/Error'
 import { LoginProps } from '@/Utils/types'
-import Logo from '../Logo'
+import Logo from '../Logo/Logo'
 import '../../Components/style.css'
 import Link from 'next/link'
 import { LogInUsers } from '@/Services/auth'
@@ -17,7 +17,7 @@ const LogInUser = () => {
     const onSubmit: SubmitHandler<LoginProps> = (data) => LogInUsers(data).then((res) => {
         window.localStorage.setItem('toktok', res.data.access_token)
         toast.success('Login Sucessfull ✅')
-        push('/signup');
+        push('/');
     })
         .catch((e) => {})
   return (

@@ -6,6 +6,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Oooh+Baby&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 
 
 
@@ -58,12 +61,6 @@
     z-index: auto;
     filter: drop-shadow(0 1px 10px black);
 }
-
-.styleHeader {
-    box-shadow: 0 1px 50px rgba(255, 166, 0, 0.536);
-    background-color: rgba(255, 255, 255, 0.758);
-}
-
 .styleInsideFooter {
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
@@ -113,4 +110,18 @@
 .sorry:hover::after {
    content:attr(data-hover);
    font-size: 20px;
+}
+
+.textUser {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    box-shadow: 0 1px 10px white;
+}
+
+.Myaccount {
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
