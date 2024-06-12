@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&family=Oooh+Baby&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
 
 
 
@@ -75,8 +77,29 @@
 }
 
 .UserBox {
-    box-shadow: 0 1px 20px rgba(255, 166, 0, 0.732);
-    font-family: "Oooh Baby", cursive;
+    box-shadow: 0 1px 10px red;
+    font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+.title {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    filter: drop-shadow(0 1px 10px rgb(255, 0, 0));
+    box-shadow: 0 1px 10px red;
+}
+.Animationtext {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+.textinformation {
+    font-family: "Dongle", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    border-radius: 20px;
+    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.742);
 }
