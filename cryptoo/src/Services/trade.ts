@@ -1,7 +1,6 @@
-import { TradeData } from "@/Utils/types"
 import axios from "axios"
 
-// All PromoCode
+// All Trade
 export async function AllTrade() {
     let url = `${process.env.NEXT_PUBLIC_API_URL}trade/all`
   
@@ -26,8 +25,8 @@ export async function AllTrade() {
       })
 }
 
-// Create PromoCode
-export async function CreateTrade(authProps: TradeData) {
+// Create trade
+export async function CreateTrade(id_offert: string) {
     let url = `${process.env.NEXT_PUBLIC_API_URL}trade/create`
   
     let axiosConfig = {
@@ -42,7 +41,7 @@ export async function CreateTrade(authProps: TradeData) {
       .post(
           url,
           {
-             id_offer: authProps.id_offer 
+             id_offer: id_offert
           },
         axiosConfig
       )

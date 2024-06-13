@@ -20,12 +20,14 @@ export type RegisterProps = {
    // CryptoData \\
 // --------------- \\
 export type CryptoData = {
-    id?:string
-    name: string
-    value: number
-    quantity: number
+    created_at: string
+    id: string
     image: string
-}
+    name: string
+    quantity: number
+    updated_at: string
+    value: number
+  }
 export type BuyCryptoData = {
     id_crypto: string
     amount: number
@@ -34,9 +36,16 @@ export type BuyCryptoData = {
 // --------------- \\
    // OfferData \\
 // --------------- \\
-export type OfferData = {
-    id_crypto: string
-    amount: string
+export type OffertsData = {
+    id: string
+    User: {
+        pseudo: string
+    }
+    amount: number
+    created_at: string
+    updated_at: string
+    id_user: string
+    Crypto: CryptoData
 }
 
 // --------------- \\
@@ -45,13 +54,6 @@ export type OfferData = {
 export type PromoCodeData = {
     name: string
     value: number
-}
-
-// --------------- \\
-   // TradeData \\
-// --------------- \\
-export type TradeData = {
-    id_offer: string
 }
 
 // --------------- \\
@@ -77,6 +79,5 @@ export type AllUserAssetData = {
         updated_at: string
     }
         amount: number
-
 }
         

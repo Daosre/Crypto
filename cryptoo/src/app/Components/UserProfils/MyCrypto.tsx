@@ -1,5 +1,5 @@
 import { UsersAsset } from '@/Services/user'
-import { AllUserAssetData, MyAssetData } from '@/Utils/types'
+import { MyAssetData } from '@/Utils/types'
 import React, { useEffect, useState } from 'react'
 
 const MyCrypto = () => {
@@ -10,18 +10,15 @@ const MyCrypto = () => {
         })
     }, [])
   return (
-      <div>
+      <div className='flex flex-col  h-full w-full gap-10 p-2 overflow-scroll'>
           {cryptoAsset?.UserHasCrypto?.map((user) => {                  
                   return (
-                      <div className='border-2 m-2'>
-                          <div className='flex flex-col p-2'>
-                              <ol className='gap-10 flex flex-col'>
-                                  <li>
+                      <div className=' w-full p-2 flex items-center rounded-lg cryptoCard'>
+                              <img src={user.Crypto.image} alt="" className='w-1/2 object-cover rounded-lg' />
+                                  <p className='w-full h-full p-2 flex flex-col justify-center gap-10'>
                                       {user.Crypto.name} : {user.amount}
-                                  </li>
-                              </ol>
-                          </div>
-                          <p>Value: {user.Crypto.value.toFixed(2)}</p>
+                                      <p className=''>Value: {user.Crypto.value.toFixed(2)}</p>
+                                  </p>
             </div>
               )
           })} 

@@ -1,4 +1,4 @@
-import { OfferData } from "@/Utils/types"
+import { OffertsData } from "@/Utils/types"
 import axios from "axios"
 
 // All Offer
@@ -27,7 +27,7 @@ export async function OffertAll() {
 }
 
 // Create Offer
-export async function OfferCreate(authProps: OfferData) {
+export async function OfferCreate(authProps: OffertsData) {
     let url = `${process.env.NEXT_PUBLIC_API_URL}offer/create`
   
     let axiosConfig = {
@@ -42,7 +42,7 @@ export async function OfferCreate(authProps: OfferData) {
       .post(
           url,
           {
-              id_crypto: authProps.id_crypto,
+              id_crypto: crypto,
               amount: authProps.amount,
           },
         axiosConfig
