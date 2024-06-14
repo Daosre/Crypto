@@ -5,6 +5,7 @@ import MyAsset from '../Button/MyAsset'
 import '../../Components/style.css'
 import Usertrade from '../Button/Usertrade'
 import BankTrader from '../Button/BankTrader'
+import PromoCode from '../Button/PromoCode'
 
 const Header = () => {
   return (
@@ -13,6 +14,7 @@ const Header = () => {
         <div className='flex flex-col gap-5 relative left-10'>
           <Usertrade />
           <BankTrader />
+          <PromoCode/>
           </div>
           <div className='flex flex-col gap-5 relative right-10'>
             <MyAsset />

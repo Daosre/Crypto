@@ -1,33 +1,21 @@
 'use client'
 import { AllUsersAsset } from '@/Services/user'
 import { AllUserAssetData, MyAssetData } from '@/Utils/types'
-import React, { useEffect, useState } from 'react'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import '../../Components/style.css'
 
-type ModalUser = {
-  Userprops: MyAssetData
-}
-const UserData = ({ Userprops }: ModalUser) => {
-  
-  const [userList, setuserList] = useState<MyAssetData[]>()
+const UserData = ({ setisLoading, isLoading }: { setisLoading: Dispatch<SetStateAction<boolean>>, isLoading: boolean}) => {
 
-  const [isReloadNeeded, setIsReloadNeeded] = useState(false)
+  const [userList, setuserList] = useState<MyAssetData[]>()
   const [assetData, setassetData] = useState<AllUserAssetData[]>()
 
   useEffect(() => {
-    setIsReloadNeeded(true)
+    setisLoading(false)
     AllUsersAsset().then((res) => {
       setuserList(res.data)
     })
-  }, [isReloadNeeded])
-
-  useEffect(() => {
-    setIsReloadNeeded(true)
-    AllUsersAsset().then((res) => {
-      setassetData(res.data)
-    })
-  }, [isReloadNeeded])
-
+  }, [isLoading])
+  
   return (
     <div className='w-1/3'>
       <h1 className='rounded-lg border-2 text-black text-5xl w-full flex items-center justify-center text-center p-6 title'> Most Rich People  </h1>

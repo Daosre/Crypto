@@ -1,4 +1,3 @@
-import { PromoCodeData } from "@/Utils/types"
 import axios from "axios"
 
 // All PromoCode
@@ -27,25 +26,24 @@ export async function AllPromoCode() {
 }
 
 // Create PromoCode
-export async function CreatePromoCode(authProps: PromoCodeData) {
+export async function CreatePromoCode(name: string, value:number) {
     let url = `${process.env.NEXT_PUBLIC_API_URL}promoCode/create`
   
     let axiosConfig = {
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json;charset=utf-8',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
          Authorization: `Bearer ${window.localStorage.getItem("toktok")}`,
       },
     }
-    return axios
-      .post(
-          url,
-          {
-              name: authProps.name,
-              value:authProps.value
-          },
-        axiosConfig
+  return axios
+    .post(
+      url,
+      {
+        name: name,
+        value: Number(value)
+      }, axiosConfig
       )
       .then((res) => {
         return res

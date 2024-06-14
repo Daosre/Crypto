@@ -16,6 +16,7 @@ const LogInUser = () => {
     const { register, handleSubmit, watch, formState: { errors }, } = useForm<LoginProps>()
     const onSubmit: SubmitHandler<LoginProps> = (data) => LogInUsers(data).then((res) => {
         window.localStorage.setItem('toktok', res.data.access_token)
+        window.localStorage.setItem('role', res.data.user.Role.name)
         toast.success('Login Sucessfull ✅',
             {
                 position: "bottom-right",

@@ -6,19 +6,18 @@ import { Offert } from '@/app/Components/Offert/Offert'
 import '../../Components/style.css'
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
-import Link from 'next/link'
 import Header from '@/app/Components/H.F/Header'
 import Footer from '@/app/Components/H.F/Footer'
 
 const page = () => {
   const [offersList, setOffersList] = useState<OffertsData[]>()
-  const [isLoading, setisLoading] = useState(true)
+  const [isLoading, setisLoading] = useState(false)
 
   useEffect(() => {
     OffertAll()
       .then((res) => {
+        setisLoading(false)
         setOffersList(res.data)
-      setisLoading(false)
   })
       .catch((e) => {
         toast.error(e)
@@ -38,11 +37,8 @@ const page = () => {
           return (
             <div
               key={offer.id}
-              className="border-2 m-8 rounded-md mt-1 w-96 p-2  bg-gradient-to-b from-amber-500 to-amber-200 border-black text-black "
-            >
-              <Offert offer={offer} setisReload={function (value: React.SetStateAction<boolean>): void {
-                throw new Error('Function not implemented.')
-              } } />
+              className="border-2 m-8 rounded-md mt-1 w-96 p-2  bg-gradient-to-b from-amber-500 to-amber-200 border-black text-black ">
+              <Offert offer={offer} setisLoading={setisLoading}/>
             </div>
           )
         })}

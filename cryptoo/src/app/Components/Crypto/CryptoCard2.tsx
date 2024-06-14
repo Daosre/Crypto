@@ -3,7 +3,7 @@ import { CryptoData } from '@/Utils/types'
 import React from 'react'
 import { BuyCryptoModal } from './BuyCrypto'
 
-export const Cryptocard2 = ({ crypto, isBuyvisible }: { crypto: CryptoData, isBuyvisible: boolean }) => {
+export const Cryptocard2 = ({ crypto, isBuyvisible, setisLoading }: { crypto: CryptoData, isBuyvisible: boolean, setisLoading: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
     <div className='border-2 border-black flex flex-col rounded-lg'>
       <img
@@ -15,7 +15,7 @@ export const Cryptocard2 = ({ crypto, isBuyvisible }: { crypto: CryptoData, isBu
           <p>{crypto.name}</p>
           <p className="text-sm">Value: {crypto.value.toFixed(2)}</p>
           <p className="text-sm">Quantity on Bank: {crypto.quantity}</p>
-        <BuyCryptoModal crypto={crypto} isBuyvisible={isBuyvisible} />
+        <BuyCryptoModal crypto={crypto} isBuyvisible={isBuyvisible} setisLoading={setisLoading} />
      </div>
     </div>
   )

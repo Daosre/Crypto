@@ -6,12 +6,7 @@ import { toast } from 'react-toastify'
 import '../../Components/style.css'
 
 
-export const BuyCryptoModal = ({
-  crypto,
-  isBuyvisible,
-}: {
-  crypto: CryptoData
-  isBuyvisible: boolean
+export const BuyCryptoModal = ({crypto,isBuyvisible,setisLoading}: {crypto: CryptoData, isBuyvisible: boolean, setisLoading: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const style = {
       position: 'absolute' as 'absolute',
@@ -27,10 +22,12 @@ export const BuyCryptoModal = ({
   const handleClose = () => setOpen(false)
   const [amount, setAmount] = useState(1)
 
-  function HandleCrypoBuy() {
+  function HandleCryptoBuy() {
     CryptoBuy(crypto.id, amount)
       .then((res) => {
         handleClose()
+        toast.success('Success Buy')
+        setisLoading(true)
       })
       .catch((e) => toast.error(e))
   }
@@ -72,13 +69,8 @@ export const BuyCryptoModal = ({
             <button
               className="bg-green-600 border border-black hover:bg-green-500 hover:border-white hover:text-black duration-700 text-white rounded-md text-center w-32 p-2 mt-10 mx-4 "
               onClick={() => {
-                HandleCrypoBuy()
-                toast.success('Success Buy')
-                setTimeout(() => {
-                  window.location.reload()
-                }, 1500);
-              }}
-            >
+                HandleCryptoBuy()
+              }}>
               Buy
             </button>
           </div>
