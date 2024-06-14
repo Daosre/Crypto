@@ -1,6 +1,5 @@
 'use client'
 import CryptoAll from '@/app/Components/Crypto/CryptoAll'
-import Diagram from '@/app/Components/Diagram/page'
 import Footer from '@/app/Components/H.F/Footer'
 import Header from '@/app/Components/H.F/Header'
 import UserData from '@/app/Components/UserData/page'
