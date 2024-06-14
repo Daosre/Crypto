@@ -86,7 +86,7 @@
     font-family: "Bungee Spice", sans-serif;
     font-weight: 400;
     font-style: normal;
-    filter: drop-shadow(0 1px 10px rgb(255, 0, 0));
+    filter: drop-shadow(0 1px 10px white);
     box-shadow: 0 1px 10px red;
 }
 .Animationtext {

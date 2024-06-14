@@ -1,22 +1,20 @@
-import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 
 export const schema = yup
   .object({
-    firstName: yup.string().required("ce champs est obligatoire"),
-    lastName: yup.string().required("ce champs est obligatoire"),
-    age: yup.number().positive("le nombre doit etre positive").min(18, "minimum 18").required('Y faut avoir minimum 18 ans')
+    firstName: yup.string().required("Required field"),
+    lastName: yup.string().required("Required field"),
+    age: yup.number().positive("le nombre doit etre positive").min(18, "Older Than 18").required('You need to have more then 18 years old')
     .integer("le nombre doit etre un entier").required("ce champs est obligatoire").typeError("ce nest pas un nombre"),
-    city: yup.string().required("ce champs est obligatoire"),
-    pseudo: yup.string().required("ce champs est obligatoire"),
-    email: yup.string().email("email valid").required(),
+    city: yup.string().required("Required field"),
+    pseudo: yup.string().required("Required field"),
+    email: yup.string().email("Email valid").required(),
     password: yup.string()
-    .matches(/[a-z]/,"il faut aumoins un miniscule")
-    .matches(/[A-Z]/,"il faut aumoins un majuscule")
-    .matches(/[1-9]/,"il faut aumoins un chiffre")
-    .matches(/[@!?]/,"il faut aumoins un caractere special")     
-    .min(8, "minimum 8 ").required("ce champs est obligatoire")
-    .required("champs obligatoire"),
-    // promoCode: yup.string()
+    .matches(/[a-z]/,"You need one letter")
+    .matches(/[A-Z]/,"You need one capital letter ")
+    .matches(/[1-9]/,"You need one number")
+    .matches(/[@!?]/,"You need one special character")     
+    .min(8, "Minimum 8 ").required("Required field")
+    .required("Required field"),
   })
   

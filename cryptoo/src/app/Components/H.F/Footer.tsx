@@ -4,7 +4,7 @@ import '../../Components/style.css'
 
 const Footer = () => {
   return (
-    <div className='border-2 bg-black border-orange-600 border-b-0  p-4 w-full rounded-t-full styleFooter text-lg absolute bottom-0'>
+    <div className='border-2 bg-black border-orange-600 border-b-0 mt-10  p-4 w-full rounded-t-full styleFooter text-lg relative bottom-0'>
       <div className=''>
         <ol className='flex justify-around items-center styleInsideFooter'>
             <li className='cursor-pointer hover:text-orange-600 duration-700'>About Us</li>

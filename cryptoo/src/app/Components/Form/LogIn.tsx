@@ -16,8 +16,15 @@ const LogInUser = () => {
     const { register, handleSubmit, watch, formState: { errors }, } = useForm<LoginProps>()
     const onSubmit: SubmitHandler<LoginProps> = (data) => LogInUsers(data).then((res) => {
         window.localStorage.setItem('toktok', res.data.access_token)
-        toast.success('Login Sucessfull ✅')
-        push('/');
+        toast.success('Login Sucessfull ✅',
+            {
+                position: "bottom-right",
+                autoClose:1500
+            }
+        )
+        setTimeout(() => {
+            push('/Crypto');
+        }, 1500);
     })
         .catch((e) => {})
   return (

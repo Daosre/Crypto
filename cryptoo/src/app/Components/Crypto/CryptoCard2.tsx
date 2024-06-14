@@ -3,9 +3,9 @@ import { CryptoData } from '@/Utils/types'
 import React from 'react'
 import { BuyCryptoModal } from './BuyCrypto'
 
-export const Cryptocard = ({ crypto, isBuyvisible }: { crypto: CryptoData, isBuyvisible: boolean }) => {
+export const Cryptocard2 = ({ crypto, isBuyvisible }: { crypto: CryptoData, isBuyvisible: boolean }) => {
   return (
-    <div className='border-2 border-black flex rounded-lg'>
+    <div className='border-2 border-black flex flex-col rounded-lg'>
       <img
         src={crypto.image}
         alt={crypto.name}

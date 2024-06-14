@@ -29,12 +29,13 @@ const UserData = ({ Userprops }: ModalUser) => {
   }, [isReloadNeeded])
 
   return (
-    <div className='flex flex-wrap border-2 rounded-lg w-1/4 justify-center p-4 mx-6 UserBox'>
-        <h1 className='rounded-lg text-black text-2xl w-full text-center p-2 title'> Most Rich People  </h1>
+    <div className='w-1/3'>
+      <h1 className='rounded-lg border-2 text-black text-5xl w-full flex items-center justify-center text-center p-6 title'> Most Rich People  </h1>
+    <div className='flex flex-wrap border-2 rounded-lg w-full h-96 justify-center overflow-scroll mt-10 UserBox'>
       {userList &&
         userList.map((user: MyAssetData) => {
           return (
-            <div className='p-4 m-8 w-48 text-white rounded-lg UserBox' key={user.id}>
+            <div className='p-4 m-8 w-48 h-32 text-white rounded-lg bg-gradient-to-t from-amber-500 to-orange-600 UserBox' key={user.id}>
               <p className='tracking-wide'>Pseudo : {user.pseudo}</p>
               <p className='tracking-wide'>Dollards Account : {user.dollarAvailables.toFixed(2)}</p>
               {/* <Amount/> */}
@@ -43,7 +44,8 @@ const UserData = ({ Userprops }: ModalUser) => {
       }
         )
       }
-    </div>
+      </div>
+      </div>
   )
 }
 
