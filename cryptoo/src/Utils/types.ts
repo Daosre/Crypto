@@ -60,7 +60,7 @@ export type PromoCodeData = {
    // AssetData \\
 // --------------- \\
 export type MyAssetData = {
-    id?: string,
+    id: string,
     firstName: string
     lastName: string
     dollarAvailables: number
@@ -70,7 +70,7 @@ export type MyAssetData = {
 }
 export type AllUserAssetData = {
     Crypto: {
-        id?: string,
+        id: string,
         name: string
         value: number
         image: string

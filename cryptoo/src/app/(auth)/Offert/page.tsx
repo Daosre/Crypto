@@ -1,7 +1,7 @@
 'use client'
 
 import { OffertAll } from '@/Services/offer'
-import { OffertsData } from '@/Utils/types'
+import { MyAssetData, OffertsData } from '@/Utils/types'
 import { Offert } from '@/app/Components/Offert/Offert'
 import '../../Components/style.css'
 import React, { useEffect, useState } from 'react'

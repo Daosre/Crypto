@@ -27,12 +27,12 @@ export async function OffertAll() {
 }
 
 // Create Offer
-export async function OfferCreate(authProps: OffertsData) {
+export async function OfferCreate(id_crypto: string, amount:number) {
     let url = `${process.env.NEXT_PUBLIC_API_URL}offer/create`
   
     let axiosConfig = {
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json;charset=utf-8',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
          Authorization: `Bearer ${window.localStorage.getItem("toktok")}`,
@@ -42,13 +42,14 @@ export async function OfferCreate(authProps: OffertsData) {
       .post(
           url,
           {
-              id_crypto: crypto,
-              amount: authProps.amount,
+              id_crypto: id_crypto,
+              amount:Number(amount),
           },
         axiosConfig
       )
       .then((res) => {
-        return res
+        return res.data
+        
       })
       .catch((e) => {
         throw new Error(e)

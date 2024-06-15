@@ -4,6 +4,8 @@ import { Box, Modal } from '@mui/material'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 import '../../Components/style.css'
+import { OfferCreate } from '@/Services/offer'
+import Creationdoffer from '../Button/OffertCreate'
 
 
 export const BuyCryptoModal = ({crypto,isBuyvisible,setisLoading}: {crypto: CryptoData, isBuyvisible: boolean, setisLoading: React.Dispatch<React.SetStateAction<boolean>>

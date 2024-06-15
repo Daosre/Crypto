@@ -2,6 +2,7 @@
 import { CryptoData } from '@/Utils/types'
 import React from 'react'
 import { BuyCryptoModal } from './BuyCrypto'
+import Creationdoffer from '../Button/OffertCreate'
 
 export const Cryptocard = ({ crypto, isBuyvisible, setisLoading }: { crypto: CryptoData, isBuyvisible: boolean, setisLoading: React.Dispatch<React.SetStateAction<boolean>>}) => {
   return (
