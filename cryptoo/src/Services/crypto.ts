@@ -82,7 +82,7 @@ export async function CryptoCreate(authProps : CryptoData) {
   
     let axiosConfig = {
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json;charset=utf-8',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
          Authorization: `Bearer ${window.localStorage.getItem("toktok")}`,
