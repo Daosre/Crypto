@@ -12,6 +12,7 @@ const page = () => {
     <div className='bg-gradient-to-tl from-gray-900 via-orange-900 to-orange-500 relative'>
       <Header />
       <div className='flex w-full h-full justify-around mt-60'>
+        {/* {Research} */}
         <div className='w-1/2 h-auto'>
           <CryptoAll isLoading={isLoading} setisLoading={setisLoading} />
         </div>

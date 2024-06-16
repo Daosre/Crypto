@@ -3,6 +3,7 @@ import { AllCrypto } from '@/Services/crypto'
 import { CryptoData } from '@/Utils/types'
 import React, { useEffect, useState } from 'react'
 import { Cryptocard } from './CryptoCard'
+import CreateCrypto from '../Button/CreateCrypto'
 
 //Pour le setisLoading ce props doit être utiliser
 const CryptoAll = ({ isLoading, setisLoading }: {isLoading: boolean, setisLoading: React.Dispatch<React.SetStateAction<boolean>>}) => {
@@ -16,7 +17,8 @@ const CryptoAll = ({ isLoading, setisLoading }: {isLoading: boolean, setisLoadin
 },[isLoading])
 
   return (
-    <div className='w-full'>
+    <div className='w-full text-center'>
+      <CreateCrypto/>
     <div className='w-full p-2 flex flex-col justify-center items-center'>
       {cryptoAll &&
         cryptoAll.map((cryptod) => {

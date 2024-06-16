@@ -77,7 +77,7 @@ export async function CryptoHistory(id: string) {
 }
 
 // Create Crypto
-export async function CryptoCreate(authProps: CryptoData) {
+export async function CryptoCreate(authProps : CryptoData) {
     let url = `${process.env.NEXT_PUBLIC_API_URL}crypto/create`
   
     let axiosConfig = {
@@ -93,8 +93,8 @@ export async function CryptoCreate(authProps: CryptoData) {
           url,
           {
             name: authProps.name,
-            value: authProps.value,
-            quantity: authProps.quantity,
+            value: Number(authProps.value),
+            quantity: Number(authProps.quantity),
             image: authProps.image
           },
         axiosConfig

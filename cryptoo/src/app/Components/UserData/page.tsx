@@ -7,7 +7,6 @@ import '../../Components/style.css'
 const UserData = ({ setisLoading, isLoading }: { setisLoading: Dispatch<SetStateAction<boolean>>, isLoading: boolean}) => {
 
   const [userList, setuserList] = useState<MyAssetData[]>()
-  const [assetData, setassetData] = useState<AllUserAssetData[]>()
 
   useEffect(() => {
     setisLoading(false)
