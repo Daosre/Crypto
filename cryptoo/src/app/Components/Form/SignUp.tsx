@@ -11,11 +11,12 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify'
 import { yupResolver } from "@hookform/resolvers/yup"
 import { schema } from '@/app/Validation/validateurForm'
+import LogoH from '../Logo/LogoH'
 
 
 const RegisterUsers = () => {
   const { push } = useRouter()
-  const { register, handleSubmit, watch, formState: { errors }, } = useForm<RegisterProps>({mode:"all", resolver:yupResolver(schema),defaultValues:{firstName:'Remy'}})
+  const { register, handleSubmit, watch, formState: { errors }, } = useForm<RegisterProps>({mode:"all", resolver:yupResolver(schema)})
   const onSubmit: SubmitHandler<RegisterProps> = (data) => registerUser(data).then((res) => {
     toast.success('Register Successfully')
       push('/login')
@@ -25,74 +26,75 @@ const RegisterUsers = () => {
     <div className=''>
         <div className="flex justify-center items-center h-screen bg-black">
         <div className="w-full h-full bg-black flex flex-col md:flex-row">
-          <div className='w-80 items-center flex flex-col justify-center mx-auto'>
-            <Logo />
+          <div className='w-80 items-center gap-10 flex flex-col justify-center mx-auto'>
+            <LogoH />
             <h1 className="text-2xl font-semibold mb-4 text-black text-center styleLogIn">SignUp</h1>
           </div>
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col items-center justify-center text-center mx-auto md:text-right'>
-           <div className="mb-4">
+          <form onSubmit={handleSubmit(onSubmit)} className='flex items-center justify-center  h-screen text-center mx-auto md:text-right'>
+            <div className='h-screen flex flex-col justify-center m-2'>
+           <div className="mb-2">
                 <label className="block text-gray-600 styleLogIn">First Name</label>
               <input type="text" id="username" className="w-80 border-2 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black border-orange-600 bg-orange-200 text-right"
                   {...register('firstName' , {required: true})} />
                   {errors.firstName && <ErrorMsg error={'firstname'} />}
             </div>
-           <div className="mb-4">
+           <div className="mb-2">
                 <label className="block text-gray-600 styleLogIn">Last Name</label>
               <input type="text" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"
               {...register('lastName' , {required: true})} />
               {errors.lastName && <ErrorMsg error={'lastname'} />}
             </div>
-            <div className="mb-4">
+            <div className="mb-2">
                 <label className="block text-gray-600 styleLogIn">Pseudo</label>
               <input type="text" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"
               {...register('pseudo' , {required: true})} />
               {errors.pseudo && <ErrorMsg error={'pseudo'} />}
             </div>
-
             {
               //Librairie de hook enfin qui ce complete a hook
             }
-            <div className="mt-4">
-               <label className="block font-semibold" htmlFor="age">Age</label>
+            <div className="mb-2">
+               <label className="block font-semibold styleLogIn" htmlFor="age">Age</label>
                   <input
                       {...register("age")}
-                        className="shadow-inner bg-gray-100 rounded-lg placeholder-black text-2xl p-2 border-none block mt-1 w-full"
+                  className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right "
                         id="age"
                         type="number"
                         />
                         {errors?.age && <p className='text-red-500'>{errors.age.message}</p>}
-            </div>
-            
-
-            <div className="mb-4">
+              </div>
+              </div>
+            <div className='m-2 h-screen items-center flex flex-col justify-center'>
+              <div className="mb-2">
                 <label className="block text-gray-600 styleLogIn">City</label>
                           <input type="text" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"
                           {...register('city' , {required: true})} />
                   {errors.city && <ErrorMsg error={'city'} />}
             </div>
-            <div className="mb-4">
+            <div className="mb-2">
                 <label className="block text-gray-600 styleLogIn">Email</label>
               <input type="email" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"
               {...register('email' , {required: true})} />
               {errors.email && <ErrorMsg error={'email'} />}
             </div>
-
-            
-            <div className="mb-4">
+            <div className="mb-2">
                 <label className="block text-gray-600 styleLogIn">Password</label>
               <input type="password" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"
               {...register('password' , {required: true})} />
               {errors.password && <ErrorMsg error={'password'} />}
             </div>
-
-
-            <div className="mb-4">
+            <div className="mb-2">
                 <label className="block text-gray-600 styleLogIn">PromoCode</label>
               <input type="text" id="password" className="w-80 border-2 border-orange-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500 text-black bg-orange-200 text-right"
-                    {...register('promoCode')} />
+                  {...register('promoCode')} />
+              </div> 
+              <div className='flex flex-col'>
+              <button type="submit" className="bg-orange-500 hover:bg-orange-700 duration-1000 text-white font-semibold rounded-md py-2 px-4 w-80 mt-3 InputLogin">Register</button>
+            <Link href="/login" className="hover:underline SignUp text-white">Log here bitch please</Link>  
+              
+              </div>
+            
             </div>
-            <button type="submit" className="bg-orange-500 hover:bg-orange-700 duration-1000 text-white font-semibold rounded-md py-2 px-4 w-80 mt-3 InputLogin">Register</button>
-            <Link href="/login" className="hover:underline SignUp text-white">Log here bitch please</Link>
         </form>
             </div>
         <div className="w-1/2 h-screen hidden lg:block">
