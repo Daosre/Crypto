@@ -34,7 +34,7 @@ export default function Creationdoffer({ crypto }: { crypto: AllUserAssetData}) 
         })
     return (
         <div>
-            <button onClick={handleOpen} className='border-2 bg-white text-black p-2  ml-40 rounded-full hover:bg-red-600 duration-700 hover:border-black '>Ici</button>
+            <button onClick={handleOpen} className='border-2 ml-10  text-white p-2  rounded-lg hover:bg-orange-600 duration-700 hover:border-black hover:text-black '>Create Offert</button>
     <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

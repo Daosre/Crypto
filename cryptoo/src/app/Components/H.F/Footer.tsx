@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../Components/style.css'
+import Image from 'next/image'
 
 
 const Footer = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
             <li className='cursor-pointer hover:text-orange-600 duration-700'>© Copyright</li>
       <div>
             <li className='flex items-center gap-4'>Compagny development website :
-              <img src="Daorse.png" alt="Company logo" className='rounded-full w-24 border-2 border-white cursor-pointer duration-700 CompagnyLogo' />
+              <Image width={100} height={100} src="/Daorse.png" alt="Company logo" className='rounded-full border-2 border-white cursor-pointer duration-700 CompagnyLogo' />
             </li>
           </div>
         </ol>

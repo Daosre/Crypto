@@ -2,11 +2,14 @@
 import { CryptoData } from '@/Utils/types'
 import React from 'react'
 import { BuyCryptoModal } from './BuyCrypto'
+import Image from 'next/image'
 
 export const Cryptocard2 = ({ crypto, isBuyvisible, setisLoading }: { crypto: CryptoData, isBuyvisible: boolean, setisLoading: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
     <div className='border-2 border-black flex flex-col rounded-lg'>
-      <img
+      <Image
+        width={100}
+        height={100}
         src={crypto.image}
         alt={crypto.name}
         className="w-full h-48 object-cover rounded-l-lg"

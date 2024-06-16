@@ -4,6 +4,7 @@ import { CreateTrade } from '@/Services/trade'
 import { toast } from 'react-toastify'
 import { Cryptocard2 } from '../Crypto/CryptoCard2'
 import { UsersAsset } from '@/Services/user'
+import { OfferDelete } from '@/Services/offer'
 
 export const Offert = ({ offer, setisLoading }: { offer: OffertsData, setisLoading: Dispatch<SetStateAction<boolean>>}) => {
   const [Userasset, setUserData] = useState<MyAssetData>()
@@ -57,7 +58,8 @@ function BuycryptohasOffert() {
          {Userasset?.pseudo === offer.User.pseudo &&(
           <button className='text-black bg-white rounded-lg p-2 border-black border hover:border-white hover:bg-red-600 duration-700'
             onClick={() => {
-            
+              OfferDelete(offer.id)
+              setisLoading(true)
           }}>Delete</button>
           )}
       </div>
