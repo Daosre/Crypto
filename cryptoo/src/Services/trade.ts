@@ -1,12 +1,12 @@
 import axios from "axios"
 
 // All Trade
-export async function AllTrade() {
+export async function AllTraderUser() {
     let url = `${process.env.NEXT_PUBLIC_API_URL}trade/all`
   
     let axiosConfig = {
       headers: {
-        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        'content-type': 'application/json;charset=utf-8',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
          Authorization: `Bearer ${window.localStorage.getItem("toktok")}`,

@@ -7,7 +7,7 @@ import { useState } from 'react'
 
 const page = () => {
   const [isLoading, setisLoading] = useState(false)
-
+const Role = window.localStorage.getItem('role')
   return (
     <div className='bg-gradient-to-tl from-gray-900 via-orange-900 to-orange-500 relative'>
       <Header />
@@ -16,7 +16,9 @@ const page = () => {
         <div className='w-1/2 h-auto'>
           <CryptoAll isLoading={isLoading} setisLoading={setisLoading} />
         </div>
-        <UserData setisLoading={setisLoading} isLoading={isLoading} />
+        {Role === 'admin' && (
+          <UserData setisLoading={setisLoading} isLoading={isLoading} />
+        )}
        </div>
       <Footer/>
     </div>

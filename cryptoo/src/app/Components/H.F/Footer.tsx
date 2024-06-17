@@ -12,7 +12,7 @@ const Footer = () => {
             <li className='cursor-pointer hover:text-orange-600 duration-700'>© Copyright</li>
       <div>
             <li className='flex items-center gap-4'>Compagny development website :
-              <Image width={100} height={100} src="/Daorse.png" alt="Company logo" className='rounded-full border-2 border-white cursor-pointer duration-700 CompagnyLogo' />
+              <Image width={100} height={100} src="/Daorse.png" alt="Company logo" className='rounded-full border-2 border-white duration-700 CompagnyLogo' />
             </li>
           </div>
         </ol>

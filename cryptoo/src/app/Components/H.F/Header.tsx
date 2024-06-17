@@ -6,6 +6,7 @@ import '../../Components/style.css'
 import Usertrade from '../Button/Usertrade'
 import BankTrader from '../Button/BankTrader'
 import PromoCode from '../Button/PromoCode'
+import TradeAll from '../Button/TradeAll'
 
 const Header = () => {
   return (
@@ -18,7 +19,8 @@ const Header = () => {
           </div>
           <div className='flex flex-col gap-5 relative right-10'>
             <MyAsset />
-            <LogOut />
+          <LogOut />
+          <TradeAll />
           </div>
       </div>
       <div className='relative left-1/2 -ml-32 header w-64 md:-ml-48 md:-top-10 duration-1000'>

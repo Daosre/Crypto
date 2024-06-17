@@ -16,7 +16,8 @@ export const Offert = ({ offer, setisLoading }: { offer: OffertsData, setisLoadi
   }
   useEffect(() => {
     MyAssetdemerde()
-  },[])
+  }, [])
+  
 function BuycryptohasOffert() {
         CreateTrade(offer.id)
           .then((res) => {

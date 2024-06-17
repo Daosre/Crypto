@@ -8,6 +8,7 @@ import CreateCrypto from '../Button/CreateCrypto'
 //Pour le setisLoading ce props doit être utiliser
 const CryptoAll = ({ isLoading, setisLoading }: {isLoading: boolean, setisLoading: React.Dispatch<React.SetStateAction<boolean>>}) => {
   const [cryptoAll, setcryptoAll] = useState<CryptoData[]>()
+  const Role = window.localStorage.getItem('role')
   
   useEffect(() => {
     setisLoading(false)
@@ -18,7 +19,9 @@ const CryptoAll = ({ isLoading, setisLoading }: {isLoading: boolean, setisLoadin
 
   return (
     <div className='w-full text-center'>
+      { Role === 'admin' && (
       <CreateCrypto/>
+    )}
     <div className='w-full p-2 flex flex-col justify-center items-center'>
       {cryptoAll &&
         cryptoAll.map((cryptod) => {

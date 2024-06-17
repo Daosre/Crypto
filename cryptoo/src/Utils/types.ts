@@ -80,4 +80,10 @@ export type AllUserAssetData = {
     }
         amount: number
 }
-        
+
+export type AllTradeProps = {
+    id: string,
+    Giver: MyAssetData,
+    Receiver: MyAssetData,
+    Crypto: AllUserAssetData
+}

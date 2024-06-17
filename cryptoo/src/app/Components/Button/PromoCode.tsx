@@ -6,10 +6,12 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import { CreatePromoCode } from '@/Services/promosCode';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { PromoCodeData } from '@/Utils/types';
+import { MyAssetData, PromoCodeData } from '@/Utils/types';
 import { toast } from 'react-toastify';
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { ErrorMsg } from '../Error/Error';
+import { UsersAsset } from '@/Services/user';
+import { log } from 'console';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -24,7 +26,7 @@ export default function PromoCode() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const { register, handleSubmit, watch, formState: { errors }, } = useForm<PromoCodeData>({mode:"all"})
+    const { register, handleSubmit, watch, formState: { errors }, } = useForm<PromoCodeData, MyAssetData>({mode:"all"})
     const onSubmit: SubmitHandler<PromoCodeData> = (data) =>
       {console.log(data)
         CreatePromoCode(data.name, data.value).then((res) => {
@@ -32,10 +34,25 @@ export default function PromoCode() {
             toast.success('Register Successfully')
             {handleClose}
     }).catch((e) => toast(e))}
+  const [Userasset, setUserData] = useState<MyAssetData>()
+  const Role = window.localStorage.getItem('role')
+  
 
+    function MyAssetdemerde() {
+      UsersAsset().then((res) => {
+        setUserData(res)
+      })
+    }
+    useEffect(() => {
+      MyAssetdemerde()
+    }, [])
+      
     return (
-    <div>
-      <button onClick={handleOpen} className='bg-white text-black border border-black p-2 rounded-lg hover:bg-orange-600 hover:text-white duration-700'>PromoCode</button>
+      <div>
+        {Role === 'admin' &&(
+                <button onClick={handleOpen} className='bg-white text-black border border-black p-2 rounded-lg hover:bg-orange-600 hover:text-white duration-700 promoCode'>Create PromoCode</button>
+        )}
+
     <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
