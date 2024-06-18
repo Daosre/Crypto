@@ -1,5 +1,6 @@
 import { OffertsData } from "@/Utils/types"
 import axios from "axios"
+import { toast } from "react-toastify"
 
 // All Offer
 export async function OffertAll() {
@@ -52,7 +53,7 @@ export async function OfferCreate(id_crypto: string, amount:number) {
         
       })
       .catch((e) => {
-        throw new Error(e)
+        toast.error('NON')
       })
 }
 

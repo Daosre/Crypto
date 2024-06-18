@@ -16,7 +16,7 @@ const MyCrypto = () => {
           {cryptoAsset?.UserHasCrypto?.map((user) => {                  
                   return (
                       <div className=' w-full p-2 flex items-center rounded-lg cryptoCard'>
-                              <Image src={user.Crypto.image} width={300} height={100} alt="" className='object-cover rounded-lg' />
+                              <Image src={user.Crypto.image} width={300} height={50} alt="" className='object-cover rounded-lg' />
                         <p className='w-1/4 p-2 flex  flex-col justify-center gap-10'>
                                       {user.Crypto.name} : {user.amount}
                      <p className=''>Value: {user.Crypto.value.toFixed(2)}</p>

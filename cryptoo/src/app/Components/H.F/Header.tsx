@@ -7,15 +7,17 @@ import Usertrade from '../Button/Usertrade'
 import BankTrader from '../Button/BankTrader'
 import PromoCode from '../Button/PromoCode'
 import TradeAll from '../Button/TradeAll'
+import PromoAll from '../Button/PromoAll'
 
 const Header = () => {
   return (
-    <div className='relative h-60 styleHeader relative'>
+    <div className='relative h-80 styleHeader relative'>
       <div className='gap-5 p-2 w-full relative top-3 justify-between flex md:top-10 duration-500'>
         <div className='flex flex-col gap-5 relative left-10'>
           <Usertrade />
           <BankTrader />
-          <PromoCode/>
+          <PromoCode />
+          <PromoAll />
           </div>
           <div className='flex flex-col gap-5 relative right-10'>
             <MyAsset />

@@ -8,7 +8,7 @@ export const Cryptocard2 = ({ crypto, isBuyvisible, setisLoading }: { crypto: Cr
   return (
     <div className='border-2 border-black flex flex-col rounded-lg'>
       <Image
-        width={100}
+        width={300}
         height={100}
         src={crypto.image}
         alt={crypto.name}

@@ -1,8 +1,6 @@
-import { OffertAll } from '@/Services/offer';
 import { AllTraderUser } from '@/Services/trade';
-import { AllTradeProps, MyAssetData } from '@/Utils/types';
+import { AllTradeProps } from '@/Utils/types';
 import React, { useEffect, useState } from 'react'
-import { Offert } from '../Offert/Offert';
 
 const TradeUser = () => {
   const [Trade, setTrade] = useState<AllTradeProps[]>()
@@ -20,9 +18,8 @@ const TradeUser = () => {
     <div className='flex flex-wrap items-center justify-center'>
       
       {Trade && Trade.map((user) => {
-          console.log(user.Crypto.amount);
           return (
-            <div className='w-1/4 rounded-lg m-2 text-center p-4 my-10 border'>
+            <div className='w-1/4 rounded-lg gap-3 flex flex-col text-center p-4 m-5 border-2 bg-amber-200 text-black border-white'>
               <p>Id de l'offre : {user.id}</p>
               <p>Giver : {user.Giver.pseudo}</p>
               <p>Receiver : {user.Receiver.pseudo}</p>

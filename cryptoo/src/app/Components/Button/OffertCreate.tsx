@@ -27,10 +27,14 @@ export default function Creationdoffer({ crypto }: { crypto: AllUserAssetData}) 
     const handleClose = () => setOpen(false);
     const { register, handleSubmit, watch, formState: { errors }, } = useForm<OffertsData>({ mode: "all" })
     const onSubmit: SubmitHandler<OffertsData> = (data) =>
-        OfferCreate(crypto.Crypto.id, Number(watch('amount'))).then((res) => {
+      OfferCreate(crypto.Crypto.id, Number(watch('amount'))).then((res) => {
+        if (res.status === 403) {
+            toast.error("You can't do this ❌")
+        } else {
             toast.success('Offer Create ✅')
             setisLoading(false)
             handleClose()
+          }
         })
     return (
         <div>

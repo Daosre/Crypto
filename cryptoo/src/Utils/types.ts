@@ -52,6 +52,7 @@ export type OffertsData = {
    // PromoCodeData \\
 // --------------- \\
 export type PromoCodeData = {
+    id: string
     name: string
     value: number
 }
@@ -85,5 +86,5 @@ export type AllTradeProps = {
     id: string,
     Giver: MyAssetData,
     Receiver: MyAssetData,
-    Crypto: AllUserAssetData
+    Crypto: AllUserAssetData[]
 }
