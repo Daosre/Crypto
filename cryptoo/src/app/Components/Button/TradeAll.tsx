@@ -1,13 +1,20 @@
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { GiTrade } from "react-icons/gi";
+
 
 const TradeAll = () => {
-    const { push } = useRouter()
+  const { push } = useRouter()
+  const Role = window.localStorage.getItem('role')
   return (
-      <div>
-          <button onClick={() => {
-             push('/AllTrade')
-          }} className='border bg-white text-black rounded-lg hover:text-white hover:bg-black hover:border-white duration-700 w-full p-2'>Trade</button>
+    <div>
+      {Role === 'admin' && ( 
+        <GiTrade size={50} className='p-2 cursor-pointer hover:bg-black duration-700 rounded-lg' onClick={() => {
+          push('/AllTrade')
+}}>
+</GiTrade>
+      )}
+         
     </div>
   )
 }

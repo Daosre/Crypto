@@ -1,6 +1,9 @@
+'use'
 import { useRouter } from 'next/navigation'
 import React from 'react'
 import { Zoom, toast } from 'react-toastify';
+import { IoLogOutOutline } from 'react-icons/io5';
+
 
 const LogOut = () => {
   const { push } = useRouter()
@@ -19,10 +22,9 @@ const LogOut = () => {
   }
   return (
     <div>
-      <button className='border-2 bg-white border-red-600 p-2 rounded-lg text-black hover:text-white hover:bg-red-600 duration-1000 hover:border-black w-20'
-        onClick={() => {
-          Logout()
-      }}>LogOut</button>
+      <IoLogOutOutline className='cursor-pointer hover:bg-red-700 duration-700 rounded-lg p-2' size={50} color='white' onClick={() => {
+        Logout()
+      }} />
     </div>
   )
 }

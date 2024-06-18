@@ -8,13 +8,13 @@ import React from 'react'
 
 const AllTrade = () => {
   return (
-    <div className='bg-gradient-to-tl from-gray-900 via-orange-900 to-orange-500 relative h-screen'>
+    <div className='bg-gradient-to-tl from-gray-900 via-orange-900 to-orange-500 h-full'>
           <div>
               <Header />
           </div>
-          <div className='flex justify-center h-1/2 mt-40'>
-          <div className='flex w-full justify-center overflow-scroll'>
-          <div className=''>
+          <div className='flex justify-center mt-40 '>
+          <div className='flex w-full justify-center h-96  '>
+          <div className='w-2/2 overflow-scroll p-4 m-4 border rounded-lg'>
               <TradeUser/>
               {/* {trade all } */}
                   </div>

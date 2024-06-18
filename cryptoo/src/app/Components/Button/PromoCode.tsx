@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { ErrorMsg } from '../Error/Error';
 import { UsersAsset } from '@/Services/user';
-import { log } from 'console';
+import { CiSquarePlus } from "react-icons/ci";
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -37,7 +37,6 @@ export default function PromoCode() {
   const [Userasset, setUserData] = useState<MyAssetData>()
   const Role = window.localStorage.getItem('role')
   
-
     function MyAssetdemerde() {
       UsersAsset().then((res) => {
         setUserData(res)
@@ -49,8 +48,11 @@ export default function PromoCode() {
       
     return (
       <div>
-        {Role === 'admin' &&(
-                <button onClick={handleOpen} className='bg-white text-black border border-black p-2 rounded-lg hover:bg-orange-600 hover:text-white duration-700 promoCode'>Create PromoCode</button>
+        {Role === 'admin' && (
+          <div>
+           
+            <button onClick={handleOpen} className='bg-white text-black border border-black p-2 rounded-lg hover:bg-orange-600 hover:text-white duration-700 flex text-center items-center promoCode'> <CiSquarePlus size={30} />PromoCode</button>
+          </div>
         )}
 
     <Modal

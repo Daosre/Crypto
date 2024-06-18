@@ -20,7 +20,7 @@ export const Cryptocard = ({ crypto, isBuyvisible, setisLoading }: { crypto: Cry
       />
       <div className='flex flex-col p-2 gap-2 w-full items-center justify-center'>
           <p>{crypto.name}</p>
-          <p className="text-sm">Value: {crypto.value.toFixed(2)}</p>
+          <p className="text-sm">Value: {crypto.value.toFixed(2)} $</p>
           <p className="text-sm">Quantity on Bank: {crypto.quantity}</p>
         <BuyCryptoModal crypto={crypto} isBuyvisible={isBuyvisible} setisLoading={setisLoading} />
      </div>

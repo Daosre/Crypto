@@ -16,6 +16,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-charts": "^7.6.2",
     "@react-icons/all-files": "^4.1.0",
+    "@tippyjs/react": "^4.2.6",
     "axios": "^1.7.2",
     "next": "14.2.3",
     "react": "^18",

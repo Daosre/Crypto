@@ -21,8 +21,8 @@ const Header = () => {
           </div>
           <div className='flex flex-col gap-5 relative right-10'>
             <MyAsset />
-          <LogOut />
           <TradeAll />
+          <LogOut/>
           </div>
       </div>
       <div className='relative left-1/2 -ml-32 header w-64 md:-ml-48 md:-top-10 duration-1000'>

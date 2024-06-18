@@ -1,13 +1,14 @@
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { AiOutlineUser } from 'react-icons/ai'
 
 const MyAsset = () => {
   const { push } = useRouter()
   return (
     <div>
-      <button className='border-2 bg-white border-green-600 text-black hover:bg-green-600 hover:text-white duration-1000 hover:border-black rounded-lg w-20 p-2' onClick={() => {
+      <AiOutlineUser size={50} className='p-2 cursor-pointer hover:bg-black duration-700 rounded-lg' onClick={() => {
         push('/userProfils')
-          }}>Asset</button>
+          }}></AiOutlineUser>
       </div>
   )
 }

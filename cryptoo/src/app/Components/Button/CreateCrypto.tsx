@@ -35,8 +35,9 @@ export default function CreateCrypto() {
     }).catch((e) => toast(e))}
 
     return (
-    <div>
-      <button onClick={handleOpen} className='bg-white text-black border border-black p-2 rounded-lg hover:bg-orange-600 hover:text-white duration-700'>Create Crypto</button>
+      <div>
+        <button onClick={handleOpen} className='bg-white text-black border border-black p-2 rounded-lg hover:bg-orange-600 hover:text-white duration-700'>Create Crypto</button>
+
     <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

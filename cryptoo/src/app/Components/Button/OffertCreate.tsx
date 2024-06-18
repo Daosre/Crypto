@@ -8,7 +8,6 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { AllUserAssetData, CryptoData, MyAssetData, OffertsData } from '@/Utils/types';
 import { toast } from 'react-toastify';
 import { IoCloseCircleSharp } from "react-icons/io5";
-import { ErrorMsg } from '../Error/Error';
 import { OfferCreate } from '@/Services/offer';
 
 const style = {
