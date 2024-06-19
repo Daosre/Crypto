@@ -51,7 +51,7 @@ export default function PromoCode() {
         {Role === 'admin' && (
           <div>
            
-            <button onClick={handleOpen} className='bg-white text-black border border-black p-2 rounded-lg hover:bg-orange-600 hover:text-white duration-700 flex text-center items-center promoCode'> <CiSquarePlus size={30} />PromoCode</button>
+            <button onClick={handleOpen} className='bg-white text-black border border-black p-2 rounded-lg hover:bg-orange-600 hover:text-white duration-700 flex text-center items-center promoCode'> <CiSquarePlus size={30}/>PromoCode</button>
           </div>
         )}
 
@@ -83,7 +83,8 @@ export default function PromoCode() {
                               <input type="number" className='rounded-full border-2 border-black text-black text-center'
                                   {...register('value', { required: true })} />
                             {errors.name && <ErrorMsg error={'Need a number'}/>}
-                                <input type='submit' className='border rounded-lg bg-white text-black hover:bg-green-600 border-black duration-700 mt-10' value={'Create PromoCode'} />
+                  <input type='submit' className='border rounded-lg bg-white text-black hover:bg-green-600 border-black duration-700 mt-10' value={'Create PromoCode'} onClick={() => {
+                    handleClose()}} />
                 </form>
             </div>
           </Box>

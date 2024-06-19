@@ -7,29 +7,33 @@ import '../../Components/style.css'
 
 const AllPromoCodee = () => {
   const [allpromocode, setallpromocode] = useState<PromoCodeData[]>()
-  const [isloading, setisloading] = useState(false)
+  const [isReloadNeeded, setIsReloadNeeded] = useState(true)
 
-    useEffect(() => {
-        AllPromoCode().then((res) => {
-            setallpromocode(res.data)
-        })
-    }, [isloading])
+
+  useEffect(() => {
+      if(isReloadNeeded)
+     { AllPromoCode().then((res) => {
+        setallpromocode(res.data)
+        setIsReloadNeeded(false)
+        })}
+    }, [isReloadNeeded])
+  
+  function reload(id: string) {
+    DeletePromoCode(id).then((res)=>setIsReloadNeeded(true))
+  }
 
     return (
-        <div className='text-center flex flex-col items-center '>
-            <h1 className='text-3xl mb-40 styleLogIn'>All PromoCode</h1>
-      <div className='flex justify-center gap-10 flex-wrap'>
+        <div className='text-center h-full flex flex-col justify-center items-center '>
+            <h1 className='text-3xl mb-10  styleLogIn'>All PromoCode</h1>
+      <div className='flex justify-center gap-10 flex-wrap overflow-scroll h-96 p-4 rounded-lg w-3/5 cadrePromo'>
           {allpromocode && allpromocode.map((user) => {
               return (
-                <div className='text-white border flex flex-col m-2 rounded-lg p-10' key={user.id}>
+                <div className='border-2 w-1/3 flex gap-5 flex-col m-2 rounded-lg p-10 text-white border-black cadrePromo' key={user.id}>
                     <p>Name : {user.name}</p>
                     <p>Value : {user.value}</p>
                         <div className='flex m-2 justify-center gap-3'>
-                          <button className='border p-2 bg-white rounded-lg text-black hover:bg-green-500 hover:text-white duration-700' onClick={() => {
-                        }}>Update</button>
                     <button className='border p-2 bg-white rounded-lg text-black hover:bg-red-600 hover:text-white duration-700' onClick={() => { 
-                      DeletePromoCode(user.id)  
-                      setisloading(true)
+                        reload(user.id)
                         }}>Delete</button>
                       </div>
                      
