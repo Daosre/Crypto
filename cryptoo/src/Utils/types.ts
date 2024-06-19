@@ -32,6 +32,10 @@ export type BuyCryptoData = {
     id_crypto: string
     amount: number
 }
+export type CryptoSellData = {
+    id_crypto: string
+    amount: number
+}
 
 // --------------- \\
    // OfferData \\

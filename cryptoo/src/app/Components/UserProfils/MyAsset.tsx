@@ -31,7 +31,7 @@ const UserProfils = () => {
           </div>
       </div>
       <div className='border mt-60 w-2/4 h-2/4 text-center flex items-center justify-center rounded-lg textUser'>
-        <MyCrypto/>
+        <MyCrypto />
       </div>
       </div>
       

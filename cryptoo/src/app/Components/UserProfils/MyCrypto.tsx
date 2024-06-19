@@ -3,6 +3,8 @@ import { MyAssetData } from '@/Utils/types'
 import React, { useEffect, useState } from 'react'
 import Creationdoffer from '../Button/OffertCreate'
 import Image from 'next/image'
+import SellCrypto from '../Button/BankSell'
+import SellCryptoo from '../Button/BankSell'
 
 const MyCrypto = () => {
     const [cryptoAsset, setCryptoAsset] = useState<MyAssetData>()
@@ -22,6 +24,7 @@ const MyCrypto = () => {
                      <p className=''>Value: {user.Crypto.value.toFixed(2)}</p>
                           </p>
                           <Creationdoffer crypto={user} />
+                          <SellCryptoo CryptoSell={{id_crypto: user.Crypto.id,amount: 0}}/>
             </div>
               )
           })} 
