@@ -1,4 +1,5 @@
 import axios from "axios"
+import { toast } from "react-toastify"
 
 // All PromoCode
 export async function AllPromoCode() {
@@ -99,6 +100,6 @@ export async function DeletePromoCode(id: string) {
       return res
     })
     .catch((e) => {
-      throw new Error(e)
+      throw toast.error('NONONO')
     })
 }

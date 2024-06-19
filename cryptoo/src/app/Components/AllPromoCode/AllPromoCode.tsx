@@ -6,14 +6,14 @@ import '../../Components/style.css'
 
 
 const AllPromoCodee = () => {
-    const [allpromocode, setallpromocode] = useState<PromoCodeData[]>()
-    const [isLoading, setisLoading] = useState(false)
+  const [allpromocode, setallpromocode] = useState<PromoCodeData[]>()
+  const [isloading, setisloading] = useState(false)
 
     useEffect(() => {
         AllPromoCode().then((res) => {
             setallpromocode(res.data)
         })
-    }, [])
+    }, [isloading])
 
     return (
         <div className='text-center flex flex-col items-center '>
@@ -26,10 +26,10 @@ const AllPromoCodee = () => {
                     <p>Value : {user.value}</p>
                         <div className='flex m-2 justify-center gap-3'>
                           <button className='border p-2 bg-white rounded-lg text-black hover:bg-green-500 hover:text-white duration-700' onClick={() => {
-                              
                         }}>Update</button>
-                          <button className='border p-2 bg-white rounded-lg text-black hover:bg-red-600 hover:text-white duration-700' onClick={() => {   
-                            DeletePromoCode(user.id)   
+                    <button className='border p-2 bg-white rounded-lg text-black hover:bg-red-600 hover:text-white duration-700' onClick={() => { 
+                      DeletePromoCode(user.id)  
+                      setisloading(true)
                         }}>Delete</button>
                       </div>
                      

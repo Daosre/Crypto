@@ -2,7 +2,6 @@
 import Footer from '@/app/Components/H.F/Footer'
 import Header from '@/app/Components/H.F/Header'
 import UserProfils from '@/app/Components/UserProfils/MyAsset'
-import MyCrypto from '@/app/Components/UserProfils/MyCrypto'
 import React from 'react'
 
 const userProfils = () => {
