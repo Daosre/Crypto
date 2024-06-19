@@ -11,6 +11,7 @@ import { toast } from 'react-toastify'
 import { yupResolver } from "@hookform/resolvers/yup"
 import { schema } from '@/app/Validation/validateurForm'
 import LogoH from '../Logo/LogoH'
+import Image from 'next/image'
 
 
 const RegisterUsers = () => {
@@ -97,7 +98,7 @@ const RegisterUsers = () => {
         </form>
             </div>
         <div className="w-1/2 h-screen hidden lg:block">
-                  <img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3J5cHRvfGVufDB8fDB8fHww" alt="" className="object-cover w-full h-full styleImage" />
+                  <Image width={300} height={100} src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3J5cHRvfGVufDB8fDB8fHww" alt="Crypto coin" className="object-cover w-full h-full styleImage" />
         </div>
         </div>
       </div>

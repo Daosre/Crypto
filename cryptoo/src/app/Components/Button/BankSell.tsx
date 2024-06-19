@@ -21,7 +21,7 @@ const style = {
   p: 4,
 };
 
-export default function SellCryptoo({ CryptoSell }: { CryptoSell: CryptoSellData }) {
+export default function SellCryptoo({ CryptoSell, setisloading }: { CryptoSell: CryptoSellData, setisloading: React.Dispatch<React.SetStateAction<boolean>> }) {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -31,8 +31,9 @@ export default function SellCryptoo({ CryptoSell }: { CryptoSell: CryptoSellData
             if (res.status === 403) {
                 toast.error("You can't do this ❌")
         } else {
-            toast.success('Offer Create ✅')
-            handleClose()
+              toast.success('Offer Create ✅')
+              handleClose()
+              setisloading(true)
           }
         })
     return (

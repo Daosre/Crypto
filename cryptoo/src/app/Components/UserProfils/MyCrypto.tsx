@@ -7,12 +7,13 @@ import SellCrypto from '../Button/BankSell'
 import SellCryptoo from '../Button/BankSell'
 
 const MyCrypto = () => {
+    const [isloading, setisloading] = useState(false)
     const [cryptoAsset, setCryptoAsset] = useState<MyAssetData>()
     useEffect(() => {
         UsersAsset().then((res) => {
             setCryptoAsset(res)
         })
-    }, [])
+    }, [isloading])
   return (
       <div className='flex flex-col h-full w-full gap-10 p-2 overflow-scroll'>
           {cryptoAsset?.UserHasCrypto?.map((user) => {                  
@@ -24,7 +25,7 @@ const MyCrypto = () => {
                      <p className=''>Value: {user.Crypto.value.toFixed(2)}</p>
                           </p>
                           <Creationdoffer crypto={user} />
-                          <SellCryptoo CryptoSell={{id_crypto: user.Crypto.id,amount: 0}}/>
+                          <SellCryptoo CryptoSell={{id_crypto: user.Crypto.id,amount: 0}} setisloading={setisloading}/>
             </div>
               )
           })} 
