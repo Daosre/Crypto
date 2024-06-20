@@ -1,6 +1,4 @@
 'use client'
-import { AllTraderUser } from '@/Services/trade'
-import TradeAll from '@/app/Components/Button/TradeAll'
 import Footer from '@/app/Components/H.F/Footer'
 import Header from '@/app/Components/H.F/Header'
 import TradeUser from '@/app/Components/Trade/TradeUser'

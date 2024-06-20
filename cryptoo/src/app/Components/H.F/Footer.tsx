@@ -1,14 +1,20 @@
+'use client'
 import React from 'react'
 import '../../Components/style.css'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 
 const Footer = () => {
+  const { push } = useRouter()
   return (
     <div className='border-2 bg-black border-orange-600 border-b-0 mt-10  p-4 w-full rounded-t-full styleFooter text-lg relative bottom-0'>
       <div className=''>
         <ol className='flex justify-around items-center styleInsideFooter'>
-            <li className='cursor-pointer hover:text-orange-600 duration-700'>About Us</li>
+          <button className='cursor-pointer hover:text-orange-600 duration-700'
+            onClick={() => {
+            push('/AboutUs')
+          }}>About Us</button>
             <li className='cursor-pointer hover:text-orange-600 duration-700'>© Copyright</li>
       <div>
             <li className='flex items-center gap-4'>Compagny development website :
