@@ -37,13 +37,13 @@ export default function PromoCode() {
   const [Userasset, setUserData] = useState<MyAssetData>()
   const Role = window.localStorage.getItem('role')
   
-    function MyAssetdemerde() {
+    function MyAssetPerso() {
       UsersAsset().then((res) => {
         setUserData(res)
       })
     }
     useEffect(() => {
-      MyAssetdemerde()
+      MyAssetPerso()
     }, [])
       
     return (
